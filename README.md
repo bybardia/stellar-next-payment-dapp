@@ -64,7 +64,7 @@ Then open http://localhost:3000 in your browser.
 ### Balance Displayed
 ![Balance displayed](./public/screenshots/balance-displayed.png)
 
-### Successful Testnet Transaction
+### Sending Testnet Transaction
 ![Successful transaction](./public/screenshots/successful-transaction.png)
 
 ### Transaction Result Shown to the User
