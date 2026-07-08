@@ -70,18 +70,6 @@ Then open http://localhost:3000 in your browser.
 ### Transaction Result Shown to the User
 ![Transaction result](./public/screenshots/transaction-result.png)
 
-## Project Structure
-
-.
-├─ app/
-│  ├─ page.tsx           # Main UI: wallet connect, balance, payment, feedback
-│  ├─ layout.tsx
-│  └─ globals.css
-├─ lib/
-│  └─ stellar-helper.ts  # Stellar logic: balance, build tx, submit tx
-├─ public/
-│  └─ screenshots/
-└─ README.md
 
 ## License
 
