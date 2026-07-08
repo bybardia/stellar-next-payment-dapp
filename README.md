@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Stellar Testnet Payment dApp
 
-## Getting Started
+A beginner-friendly payment dApp built for the Stellar White Belt (Level 1) challenge. Users can connect their Freighter wallet, view their XLM balance on the Stellar Testnet, and send XLM to any address — with clear transaction feedback, including the transaction hash.
 
-First, run the development server:
+## Features
 
-```bash
+- Connect and disconnect the Freighter wallet
+- Uses the Stellar Testnet
+- Fetch and display the connected wallet's XLM balance
+- Send XLM payments on the Stellar Testnet
+- Transaction feedback: success/failure state and transaction hash
+- Link to view the transaction on Stellar Expert
+- Modern, dark-themed, responsive UI
+- Basic error handling for wallet, network, and transaction issues
+
+## Tech Stack
+
+- **Frontend Framework:** Next.js (React Hooks)
+- **Styling:** Tailwind CSS (modern, dark-themed, responsive design)
+- **Blockchain:** Stellar Testnet
+- **Wallet:** Freighter
+- **Blockchain SDK:** Stellar JavaScript SDK (logic in `lib/stellar-helper.ts`)
+
+## Prerequisites
+
+- Node.js (v18 or newer)
+- The [Freighter wallet](https://www.freighter.app/) browser extension
+- Freighter set to the **Testnet** network
+- A testnet account funded via [Friendbot](https://friendbot.stellar.org/)
+
+## Setup Instructions (Run Locally)
+
+Clone the repository:
+
+git clone https://github.com/bybardia/stellar-next-payment-dapp.git
+cd stellar-next-payment-dapp
+
+Install dependencies:
+
+npm install
+
+Run the development server:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open http://localhost:3000 in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## How to Use
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Install the Freighter wallet and switch it to **Testnet**.
+2. Fund your testnet account using Friendbot.
+3. Open the app and click **Connect Wallet**.
+4. Approve the connection in Freighter.
+5. View your connected address and XLM balance.
+6. Enter a destination address and an amount.
+7. Click **Send Payment** and approve the transaction in Freighter.
+8. See the transaction result and hash in the UI.
 
-## Learn More
+## Screenshots
 
-To learn more about Next.js, take a look at the following resources:
+### Wallet Connected State
+![Wallet connected](./public/screenshots/wallet-connected.png)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Balance Displayed
+![Balance displayed](./public/screenshots/balance-displayed.png)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Successful Testnet Transaction
+![Successful transaction](./public/screenshots/successful-transaction.png)
 
-## Deploy on Vercel
+### Transaction Result Shown to the User
+![Transaction result](./public/screenshots/transaction-result.png)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Project Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+.
+├─ app/
+│  ├─ page.tsx           # Main UI: wallet connect, balance, payment, feedback
+│  ├─ layout.tsx
+│  └─ globals.css
+├─ lib/
+│  └─ stellar-helper.ts  # Stellar logic: balance, build tx, submit tx
+├─ public/
+│  └─ screenshots/
+└─ README.md
+
+## License
+
+MIT
